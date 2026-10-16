@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security Header: Prevents unauthorized scripts from executing -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';">
+    <title>SmartRack AI - Warehouse Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Secure Premium Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒 </text> </svg>">
+
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+
+    <div class="saas-container">
+        <!-- Premium Header Area -->
+        <header class="saas-header">
+            <div class="logo">🔒 SmartRack <span>AI</span></div>
+            <p class="tagline">NextGen B2B E-Commerce Warehouse Optimization Engine</p>
+        </header>
+
+        <main class="saas-main">
+            <!-- Left Panel: Secure Controls -->
+            <section class="control-panel">
+                <h3>🛡️ Secure Control Center</h3>
+                <p class="panel-desc">Warehouse database secure hai. Barcode scan karne ke liye niche tracking ID likhein.</p>
+                
+                <div class="input-group">
+                    <label for="barcodeInput">Enter Tracking ID / Price (10 - 1170)</label>
+                    <!-- Secure Input: Restricted to numbers and locked between 10 and 100 -->
+                    <input 
+                        type="number" 
+                        id="barcodeInput" 
+                        min="10" 
+                        max="100" 
+                        required 
+                        placeholder="e.g., 42"
+                        autocomplete="off"
+                    >
+                    <button id="scanBtn" class="primary-btn">Scan Stock</button>
+                </div>
+
+                <!-- Live System Terminal Logs -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">Live Engine Logs</span>
+                    </div>
+                    <div id="terminalBody" class="terminal-body">
+                        [SYS]: System initialized securely.<br>
+                        [SYS]: Waiting for secure barcode input...
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Visual Warehouse Grid -->
+            <section class="visual-panel">
+                <div class="panel-header">
+                    <h3>📦 Warehouse Real-Time Grid</h3>
+                    <div class="status-indicators">
+                        <span class="badge yellow">Scanning</span>
+                        <span class="badge gray">Rejected</span>
+                        <span class="badge green">Located</span>
+                        <span class="badge red">Insert Spot</span>
+                    </div>
+                </div>
+                
+                <!-- This grid will be populated by your JavaScript -->
+                <div id="warehouseGrid" class="warehouse-grid">
+                    <!-- Example placeholder box so you can see how it looks before JS runs -->
+                    <div class="rack-card">
+                        <div class="barcode-icon">|||||</div>
+                        <div class="rack-id">10</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

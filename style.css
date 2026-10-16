@@ -1,0 +1,309 @@
+/* Core Variables for Premium UI */
+:root {
+    --bg-dark: #0f172a;
+    --panel-bg: #1e293b;
+    --border-color: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary-blue: #3b82f6;
+    --scanning-yellow: #eab308;
+    --located-green: #10b981;
+    --insert-red: #ef4444;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+}
+
+.saas-container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Header Styling */
+.saas-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.logo span { color: var(--primary-blue); }
+.tagline { color: var(--text-muted); font-size: 14px; margin-top: 5px; }
+
+/* Layout Main Split */
+.saas-main {
+    display: flex;
+    gap: 30px;
+}
+
+.control-panel {
+    flex: 1;
+    background-color: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.visual-panel {
+    flex: 2;
+    background-color: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h3 { margin: 0; font-size: 18px; color: var(--text-main); }
+.panel-desc { font-size: 13px; color: var(--text-muted); margin: 0; }
+
+/* Secure Input Form */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.input-group label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; font-weight: bold; }
+.input-group input {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-main);
+    padding: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+.input-group input:focus { border-color: var(--primary-blue); }
+
+.primary-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.primary-btn:hover { background-color: #2563eb; }
+
+/* Secure Terminal Box */
+.terminal-box {
+    background-color: #020617;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.terminal-header {
+    background-color: #0f172a;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background-color: #ef4444; }
+.yellow { background-color: #eab308; }
+.green { background-color: #10b981; }
+.terminal-title { font-size: 11px; color: var(--text-muted); margin-left: 5px; }
+.terminal-body { padding: 12px; font-size: 12px; color: #38bdf8; line-height: 1.6; }
+
+/* Warehouse Grid Display */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.status-indicators { display: flex; gap: 8px; }
+.badge { font-size: 10px; padding: 4px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase; }
+.badge.yellow { background-color: var(--scanning-yellow); color: #000; }
+.badge.gray { background-color: var(--border-color); color: var(--text-muted); }
+.badge.green { background-color: var(--located-green); color: white; }
+.badge.red { background-color: var(--insert-red); color: white; }
+
+.warehouse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    gap: 10px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Individual Rack Cards */
+.rack-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px 5px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.barcode-icon { font-size: 8px; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 4px; }
+.rack-id { font-size: 14px; font-weight: bold; }
+
+/* 🌟 DYNAMIC DOM CLASSES FOR JAVASCRIPT ANIMATIONS 🌟 */
+.scanning-state {
+    background-color: var(--scanning-yellow) !important;
+    border-color: var(--scanning-yellow) !important;
+    color: #020617 !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px var(--scanning-yellow);
+}
+.scanning-state .barcode-icon { color: #020617; }
+
+.rejected-state {
+    opacity: 0.15;
+    pointer-events: none; /* User cannot click disabled slots */
+}
+
+.located-state {
+    background-color: var(--located-green) !important;
+    border-color: var(--located-green) !important;
+    color: white !important;
+    box-shadow: 0 0 15px var(--located-green);
+    transform: scale(1.05);
+}
+.located-state .barcode-icon { color: white; }
+
+.insert-state {
+    background-color: var(--insert-red) !important;
+    border-color: var(--insert-red) !important;
+    color: white !important;
+    animation: flash 1s infinite alternate;
+    box-shadow: 0 0 15px var(--insert-red);
+}
+.insert-state .barcode-icon { color: white; }
+
+@keyframes flash {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* ==========================================================================
+   🔒 100% SECURE & PREMIUM RESPONSIVE DESIGN (FOR MOBILE & TABLETS)
+   ========================================================================== */
+
+/* 1. Tablets aur Choti Screens Ke Liye (Max-width: 900px) */
+@media screen and (max-width: 900px) {
+    body {
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .saas-container {
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    /* Dono panels ko aamnay-saamnay ke bajaye upar-niche (vertical) karna */
+    .saas-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .control-panel, .visual-panel {
+        flex: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Boxes ki grid ko thoda behtar set karna */
+    .warehouse-grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        max-height: 350px; /* Mobile par screen choti hoti hai */
+    }
+}
+
+/* 2. Pure Mobile Phones Ke Liye (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .saas-header {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .tagline {
+        font-size: 11px;
+    }
+
+    .control-panel {
+        padding: 15px;
+    }
+
+    /* Input aur button mobile par full width ho jayein taake click karna aasan ho */
+    .input-group input, .primary-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Badges/Indicators ko wrap karna taake mobile screen se baahar na nikal jayein */
+    .status-indicators {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .badge {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    /* Mobile screen par 5000 elements chalne par boxes ko mazeed chota aur fit rakhna */
+    .warehouse-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 8px;
+        max-height: 300px;
+    }
+
+    .rack-card {
+        padding: 8px 3px;
+    }
+
+    .rack-id {
+        font-size: 11px;
+    }
+
+    .terminal-body {
+        font-size: 11px;
+        padding: 10px;
+    }
+}
